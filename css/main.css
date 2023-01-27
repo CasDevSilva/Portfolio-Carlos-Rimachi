@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+:root{
+    --font-text: 'Inter', sans-serif;
+    --font-nav: 'Rubik', sans-serif;
+    --size-extra-hight: 48px;
+    --size-hight: 36px;
+    --size-semi-hight: 24px;
+    --size-medium: 18px;
+    --size-normal: 16px;
+    --size-mini: 14px;
+    --size-small: 12px;
+    --size-extra-mini: 4px;
+    --primary-color: #FF1B1C;
+    --secondary-color:#FF7F11;
+    --third-color:#BEB7A4;
+    --dark-color: #000000;
+    --light-color: #FFFFFC;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+nav ul,.studies,.graphic,.projects__description,.card__project,.experience{
+    display: flex;
+}
+nav ul, .projects__description, .experience{
+    flex-direction: row;
+}
+.studies,.graphic,.card__project{
+    flex-direction: column;
+}
+body{
+    overflow-x: hidden;
+    font-family: var(--font-text);
+    padding: var(--size-extra-hight) var(--size-small);
+    color: var(--dark-color);
+    background: #F2F2F2;
+}
+nav ul{
+    flex-wrap: wrap;
+    gap:  var(--size-extra-mini) var(--size-mini);
+}
+nav li{
+    width: max-content
+}
+nav a{
+    font-family: var(--font-nav);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: .1s;
+    font-size: var(--size-mini);
+}
+nav li:hover a{
+    color: var(--primary-color);
+}
+img{
+    max-width: 100%;
+}
+header{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas: "photo name name" "nav nav nav";
+    gap: var(--size-extra-mini) var(--size-mini);
+    align-items: center;
+}
+header img{
+    grid-area: photo;
+    border-radius: 50%;
+    transform: rotate(-20deg)
+}
+h1{
+    grid-area: name;
+    font-size: var(--size-semi-hight);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: var(--size-hight);
+    height: max-content;
+    font-family: var(--font-nav);
+}
+h1 span{
+    border-bottom: 3px solid var(--primary-color);
+}
+nav{grid-area: nav;}
+main{
+    padding: var(--size-medium) 0;
+}
+
+h2{
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: var(--size-medium);
+}
+h3{
+    color: rgb(90, 90, 90);
+}
+.description h3{
+    font-size: var(--size-mini);
+    padding: var(--size-extra-mini) 0 var(--size-small);
+}
+.description p{
+    line-height: var(--size-medium);
+}
+.studies{
+    padding: var(--size-mini) 0 var(--size-small);
+    gap: var(--size-small);
+}
+.card__studie h3{
+    color: var(--dark-color);
+}
+.card__studie p{
+    color: var(--third-color);
+    font-size: var(--size-small);
+    padding-top: var(--size-extra-mini);
+}
+.graphic{
+    gap: var(--size-small);
+    margin: var(--size-medium) 0;
+}
+.card__graphic{
+    padding: var(--size-medium);
+    border-radius: var(--size-small);
+    background: var(--light-color);
+}
+.card__graphic h3{
+    margin: 0 0 var(--size-medium);
+}
+.card__graphic p{
+    font-size: var(--size-mini);
+}
+.card__graphic p+p{
+    margin: var(--size-small) 0;
+}
+meter{
+    display: block;
+    width: 100%;
+}
+meter::-webkit-meter-optimum-value{
+    background: var(--secondary-color);
+}
+meter::-moz-meter-bar{
+    background: var(--secondary-color);
+}
+meter::-webkit-meter-even-less-good-value{
+    background: var(--secondary-color);
+}
+meter::-moz-meter-sub-sub-optimum{
+    background: var(--secondary-color);
+}
+meter::-webkit-meter-suboptimum-value{
+    background: var(--secondary-color);
+}
+meter::-moz-meter-optimum{
+    background: var(--secondary-color);
+}
+.certifications ul{
+    padding: var(--size-normal) var(--size-small);
+}
+.certifications li+li{
+    margin: var(--size-small) 0;
+}
+.certifications li::before{
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    margin: 0 var(--size-small) 0 0;
+}
+.certifications li a{
+    text-decoration: none;
+    color: var(--dark-color);
+    transition: .1s;
+}
+.certifications li:hover a{
+    color: var(--primary-color);
+}
+.projects__description{
+    padding: var(--size-medium) 0;
+    flex-wrap: wrap;
+    gap: var(--size-medium);
+}
+.card__project{
+    width: 100%;
+    padding: var(--size-medium);
+    gap: var(--size-small);
+    background: var(--light-color);
+}
+.card__project,.card__project img{
+    border-radius: var(--size-small);
+}
+.card__project img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+}
+.card__project button{
+    background-color: var(--primary-color);
+    border: 0;
+    outline: none;
+    padding: var(--size-extra-mini) var(--size-medium);
+    border-radius: var(--size-extra-mini);
+}
+.card__project button:last-of-type{
+    background: var(--secondary-color);
+}
+.card__project a{
+    color: var(--light-color);
+    text-decoration: none;
+}
+.experience{
+    flex-wrap: wrap;
+    gap: var(--size-medium);
+}
+.experience .card__studie{
+    width: 100%;
+}
+.experience .card__studie p:nth-of-type(2){
+    font-size: var(--size-mini);
+    color: var(--dark-color);
+}
+.experience .card__studie ul{
+    font-size: var(--size-mini);
+}
+.contact{
+    margin: var(--size-small) 0;
+}
+.contact h2{
+    margin-bottom: var(--size-extra-mini);
+}
+.contact span{
+    font-size: var(--size-semi-hight);
+}
+.contact a{
+    color: var(--dark-color);
+    transition: .2s;
+}
+.contact span:hover a{
+    color: var(--primary-color);
+}
+footer p{
+    color: var(--third-color);
+    text-align: center;
+}
+footer a{
+    color: var(--dark-color);
+    text-decoration: none;
+}
+@media all and (min-width: 450px){
+    .card__project{
+        width: 47%;
+    }
+}
+@media all and (min-width: 600px){
+    .graphic{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card__graphic{
+        width: 47%;
+        height: max-content;
+    }
+    .experience h2{
+        width: 100%;
+    }
+    .experience .card__studie{
+        width: 47%;
+    }
+}
+@media all and (min-width:700px){
+    header{
+        grid-template-areas:  "photo name name" "photo nav nav";
+    }
+    h1{
+        font-size: var(--size-hight);
+    }
+    nav li a{
+        font-size: var(--size-medium);
+    }
+}
+@media all and (min-width: 850px){
+    .card__project,.card__graphic{
+        width: 31%;
+    }
+}
+@media all and (min-width: 900px){
+    body{
+        padding: var(--size-extra-hight) 15%;
+    }
+}
